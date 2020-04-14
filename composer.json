@@ -9,7 +9,10 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "php": "^7.0.0",
+        "laravel/laravel": "^5.1"
+    },
     "extra": {
         "laravel": {
             "providers": [
