@@ -1,0 +1,25 @@
+{
+    "name": "mitul/addresses",
+    "description": "Provide the addressbook to store multiple address at one place",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mitul",
+            "email": "mitul.koradiya@viitor.cloud"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "mitul\\addresses\\AddressesServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Mitul\\Addresses\\": "src/"
+        }
+    }
+}
