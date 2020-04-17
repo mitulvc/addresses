@@ -13,7 +13,7 @@ class AddressesServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // $this->publishes([__DIR__ . '/../database' => database_path('migrations/')], 'contact-migrations');
+        //    
     }
 
     /**
@@ -23,6 +23,16 @@ class AddressesServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadMigrationsFrom(__DIR__.'/Migrations');
+        $this->registerPublishables();
+    }
+
+    protected function registerPublishables(): void
+    {   
+        if (! class_exists('CreateAddressTable')) {
+            $this->publishes([
+                __DIR__.'/../database/migrations/create_address_table.php.stub' => database_path('migrations/'.date('Y_m_d_His', time()).'_create_address_table.php'),
+            ], 'migrations');
+        }
+
     }
 }

@@ -15,8 +15,7 @@ class CreateAddressTable extends Migration
     {
         Schema::create('address', function (Blueprint $table) {
             $table->id();
-            $table->integer('model_id');
-            $table->string('model_type');
+            $table->morphs('model');
             $table->string('formated_address',200)->nullable();
             $table->string('latitude',50)->nullable();
             $table->string('longitude',50)->nullable();
